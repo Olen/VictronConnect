@@ -65,19 +65,20 @@ Do not hesitate to contact me if you need help in decoding the PCAP-file that is
 
 ### Android
 To do a packet capture from Android, download the nRF Connect and Logger apps: 
-https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp
-https://play.google.com/store/apps/details?id=no.nordicsemi.android.log
+* https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp
+* https://play.google.com/store/apps/details?id=no.nordicsemi.android.log
 
 Keep nRF Logging enabled while you run the VictronConnect app on your phone and save the logs somewhere after you have done a few operations.
 
 Alternatively, enable developer options in Android
 
 https://www.digitaltrends.com/mobile/how-to-get-developer-options-on-android/
+
 From Developer Options settings, set "Bluetooth HCI snoop log" to enabled. 
 
 After starting and running VictronConnect for a short while, go back into Developer Options and click "Take bug report", select "Full report" and share the report with yourself somehow.
 
-Depending on android version, you can either unzip the bug report and find the file FS/data/log/bt/btsnoop_hci.log or you might need to use the btsnooz script available here https://android.googlesource.com/platform/system/bt/+/master/tools/scripts/btsnooz.py
+Depending on android version, you can either unzip the bug report and find the file *FS/data/log/bt/btsnoop_hci.log* or you might need to use the btsnooz script available here https://android.googlesource.com/platform/system/bt/+/master/tools/scripts/btsnooz.py
 
 * Get btsnooz.py.
 * Extract the text version of the bug report.
