@@ -42,9 +42,9 @@ Documentation of their open protocols and APIs is here: https://www.victronenerg
 But their only "FAQ"-question on this page: https://www.victronenergy.com/live/open_source:start is quite disappointing:
 
 ### Q1. Why is the Bluetooth API not public?
-*Making the bluetooth API an official public one would mean that we can’t change it as simply as we can today; and also it means that we’ll get questions about it: bluetooth is not simple. Far more complicated than a serial port.*
-
-*And then only our developers will be able to answer them: taking away development resources. Hence we chose to not make the Bluetooth API public.*
+> Making the bluetooth API an official public one would mean that we can’t change it as simply as we can today; and also it means that we’ll get questions about it: bluetooth is not simple. Far more complicated than a serial port.*
+> 
+> And then only our developers will be able to answer them: taking away development resources. Hence we chose to not make the Bluetooth API public.*
 
 So that is why I started reverse engineering the protocol, as I wanted to be able to monitor a couple of VE devices over bluetooth.  It is silly to be forced to use a serial port when BT is available and works fine without cabling.
 
