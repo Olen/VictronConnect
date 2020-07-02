@@ -1,4 +1,11 @@
 # VictronConnect
+<img src="https://github.com/Olen/VictronConnect/blob/master/VictronConnect.png?raw=true">
+
+## This repository is in no way approved or related to the official Victron Energy repository.  
+This is just my private take at understanding the protocol used by VictronConnect Bluetooth
+
+## Intro
+
 Decompiling the VictronConnect app
 
 These are some useful files when trying to decompile the VictronConnect to talk to VE Direct appliances.
