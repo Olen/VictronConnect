@@ -63,6 +63,49 @@ If you want to help, the easiest is to download the VictronConnect app for Linux
 
 Do not hesitate to contact me if you need help in decoding the PCAP-file that is captured.
 
+
+### bluetoothctl
+Another nice way to snoop on what is going on after you have figured out the correct UUIDs is to run bluetoothctl
+
+* Connect to the device and go into "menu gatt"
+* Use "list-attributes" to find the different charactersticts.
+* Select an interesting attribute and enable notifications
+
+
+```
+$ bluetootctl
+[bluetooth]# scan on
+(...)
+[bluetooth]# scan off
+[bluetooth]# devices
+(...)
+Device DE:33:11:25:xx:xx VE.Direct Smart
+(...)
+[bluetooth]# connect DE:33:11:25:xx:xx
+Attempting to connect to DE:33:11:25:xx:xx
+Connection successful
+
+[VE.Direct Smart]# trust 
+Changing DE:33:11:25:xx:xx trust succeeded
+
+[VE.Direct Smart]# pair
+Attempting to pair with DE:33:11:25:xx:xx
+Request passkey
+[agent] Enter passkey (number in 0-999999): 000000
+Pairing successful
+[VE.Direct Smart]# 
+[VE.Direct Smart]# menu gatt
+[VE.Direct Smart]# list-attributes 
+(...)
+[VE.Direct Smart]# select-attribute 306b0003-b081-4037-83dc-e59fcc3cdfd0
+[VE.Direct Smart:/service001f/char0023]# notify on
+Notify started
+
+```
+
+You can then see what happens while your computer connects to the device.  Be aware that you can not do this while running the app on another device, as BLE only allows one connected device at the time. So you will not be able to connect to the VE device with both your phone and your computer at the same time.  But you CAN do this while running the Victron Connect app on your computer.
+
+
 ### Android
 To do a packet capture from Android, download the nRF Connect and Logger apps: 
 * https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp
