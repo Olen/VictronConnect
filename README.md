@@ -1,7 +1,7 @@
 # VictronConnect
 <img src="https://github.com/Olen/VictronConnect/blob/master/VictronConnect.png?raw=true">
 
-## This repository is in no way approved or related to the official Victron Energy repository.  
+## This repository is in no way approved or afiliated with the official Victron Energy repository.  
 This is just my private take at understanding the protocol used by VictronConnect Bluetooth
 
 ## Intro
