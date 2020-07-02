@@ -26,7 +26,7 @@ By converting the id field to hex: 41569 => 0xA261 you can find the device in "d
 ```
 That data dump is not very well structured, so the information you look for might be either just above or just below the "productid"
 
-
+*phoenix.py* is a simple script to connect to an inverter and read some data.  Might be used as a starting point if you want to test the same for another device
 
 
 ## Background
