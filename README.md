@@ -1,14 +1,35 @@
 # VictronConnect
 <img src="https://github.com/Olen/VictronConnect/blob/master/VictronConnect.png?raw=true">
 
-## This repository is in no way approved or afiliated with the official Victron Energy repository.  
-This is just my private take at understanding the protocol used by VictronConnect Bluetooth
+## This repository is in no way approved by or afiliated with the official Victron Energy repository.  
+This is just my private take at understanding the protocol used by VictronConnect Bluetooth.
 
-## Intro
+If you use the information here to connect to your device and it breaks, you are allowed to keep the pieces.
 
-Decompiling the VictronConnect app
+## Decompiling the VictronConnect app
 
 These are some useful files when trying to decompile the VictronConnect to talk to VE Direct appliances.
+
+*data-structures.json* is a dump of what data you can expect to read/set for most of the available VC devices.  It is NOT valid json, so if you want to use some of the data, you probably need to modify it to fit your need.
+*devices.xml* is a huge XML file with various information about the devices. This file also has readable names for the devices so you can search for them there
+
+Each device in devices.xml has a section like this:
+```
+    <model>
+        <description>Phoenix Inverter 12V 800VA 230Vac</description>
+        <id>41569</id>
+    </model>
+```
+By converting the id field to hex: 41569 => 0xA261 you can find the device in "data-structures.json"
+```
+  "productid":"0xA261",
+```
+That data dump is not very well structured, so the information you look for might be either just above or just below the "productid"
+
+
+
+
+## Background
 
 For some reason, Victron Energy has decided that they want to be open with all their protocols _except_ Bluetooth.
 They have an extensive github repo here: https://github.com/victronenergy
@@ -21,13 +42,13 @@ Documentation of their open protocols and APIs is here: https://www.victronenerg
 But their only "FAQ"-question on this page: https://www.victronenergy.com/live/open_source:start is quite disappointing:
 
 ### Q1. Why is the Bluetooth API not public?
-_Making the bluetooth API an official public one would mean that we can’t change it as simply as we can today; and also it means that we’ll get questions about it: bluetooth is not simple. Far more complicated than a serial port.
+*Making the bluetooth API an official public one would mean that we can’t change it as simply as we can today; and also it means that we’ll get questions about it: bluetooth is not simple. Far more complicated than a serial port.
 
-And then only our developers will be able to answer them: taking away development resources. Hence we chose to not make the Bluetooth API public._
+And then only our developers will be able to answer them: taking away development resources. Hence we chose to not make the Bluetooth API public.*
 
 So that is why I started reverse engineering the protocol, as I wanted to be able to monitor a couple of VE devices over bluetooth.  It is silly to be forced to use a serial port when BT is available and works fine without cabling.
 
-Currently the script _phoenix.py_ is able to connect to a Phoenix inverter, and read the most relevant data
+Currently the script *phoenix.py* is able to connect to a Phoenix inverter, and read the most relevant data
 - Input Voltage
 - Output Voltage
 - Current
