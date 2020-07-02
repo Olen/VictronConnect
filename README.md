@@ -11,6 +11,7 @@ If you use the information here to connect to your device and it breaks, you are
 These are some useful files when trying to decompile the VictronConnect to talk to VE Direct appliances.
 
 *data-structures.json* is a dump of what data you can expect to read/set for most of the available VC devices.  It is NOT valid json, so if you want to use some of the data, you probably need to modify it to fit your need.
+
 *devices.xml* is a huge XML file with various information about the devices. This file also has readable names for the devices so you can search for them there
 
 Each device in devices.xml has a section like this:
