@@ -6,6 +6,11 @@ This is just my private take at understanding the protocol used by VictronConnec
 
 If you use the information here to connect to your device and it breaks, you are allowed to keep the pieces.
 
+## Example usage
+Look at e.g. this repo for an example of how you can use thins information for something useful:
+https://github.com/Olen/solar-monitor
+
+
 ## Decompiling the VictronConnect app
 
 These are some useful files when trying to decompile the VictronConnect to talk to VE Direct appliances.
